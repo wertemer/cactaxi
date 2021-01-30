@@ -1,0 +1,10 @@
+.box {
+		white-space:nowrap;
+		width:100%;
+}
+.box div{
+	display:inline-block;
+}
+.box-hide{
+	display:none;
+}
