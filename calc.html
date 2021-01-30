@@ -1,0 +1,343 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Калькулятор такси</title>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <meta http-equiv="x-ua-compatible" content="IE=edge">
+        <link href='./style/bootstrap.css?v=1' rel='stylesheet' type='text/css'>
+        <link rel="stylesheet" type="text/css" href="./style/datepicker.css">
+    </head>
+    <body>
+    	<div class="container">
+    		<div id="calcform">
+    			<form id="calctaxifrm" method="POST">
+    				<div id="formtitle" class="row">
+    					<div><strong>ОНЛАЙН ЗАКАЗ ТАКСИ</strong></div>&nbsp;&nbsp;&nbsp;
+    					<div>Местное время:&nbsp;&nbsp;</div>
+    					<div id="datetimenow"></div>
+    				</div> 
+    				<div class="row">
+    					<div id="type_select_from" class="col">
+    						<div class="row">
+    							<div id="fromair" class="col"><img src="" width="20" height="20"/></div>
+    							<div id="fromjd" class="col"><img src="" width="20" height="20"/></div>
+    							<div id="fromadr" class="col"><img src="" width="20" height="20"/></div>
+    						</div>
+    					</div>
+    					<div id="type_select_to" class="col">
+    						<div class="row">
+    							<div id="toair" class="col"><img src="" width="20" height="20"/></div>
+    							<div id="tojd" class="col"><img src="" width="20" height="20"/></div>
+    							<div id="toadr" class="col"><img src="" width="20" height="20"/></div>
+    						</div>
+    					</div>
+    				</div>
+    				<div class="row">
+    					<div id="adr_select_from" class="col">
+    						<select id="adr_sel_from">
+    							<option value="0">Откуда?</option>
+    							<option value="1">Аэропорт Симферополя</option>
+								<option value="2">Ж/д вокзал Симферополя</option>
+								<option value="3">Ай-даниль</option>
+								<option value="4">Алупка</option>
+								<option value="5">Алушта</option>
+								<!--<option value="6">Андреевка</option>-->
+								<option value="7">Армянск</option>
+								<option value="8">Балаклава</option>
+								<option value="9">Бахчисарай</option>
+								<option value="10">Белогорск</option>
+								<option value="11">Береговое (Феодосия)</option>
+								<option value="12">Береговое (бахчисарай)</option>
+								<!--<option value="13">Ботанический сад</option>-->
+								<option value="14">Вилино</option>
+								<!--<option value="15">Витино</option>-->
+								<option value="16">Гаспра</option>
+								<option value="17">Геническ</option>
+								<option value="18">Голубой Залив</option>
+								<option value="19">Гурзуф</option>
+								<option value="20">Даниловка</option>
+								<option value="21">Джанкой</option>
+								<option value="22">Евпатория</option>
+								<!--<option value="23">Заозерное</option>-->
+								<option value="24">Зеленогорье</option>
+								<!--<option value="25">Золотое (Керчь)</option>-->
+								<option value="26">Казантип (Поповка)</option>
+								<option value="27">Канака</option>
+								<option value="28">Кастрополь</option>
+								<option value="29">Кацивели</option>
+								<option value="30">Кача</option>
+								<option value="31">Керчь</option>
+								<option value="32">Керчь (героевка)</option>
+								<option value="33">Керчь(порт крым)</option>
+								<option value="34">Кикенеиз</option>
+								<option value="35">Коктебель</option>
+								<option value="36">Кореиз</option>
+								<option value="37">Красные пещеры</option>
+								<option value="38">Курортное (Белог. р-н)</option>
+								<option value="39">Курортное (Керчь)</option>
+								<option value="40">Курортное (Коктебель р-н)</option>
+								<option value="41">Курортное (Ленин. р-н)</option>
+								<option value="42">Курортное (Щебетовка)</option>
+								<option value="43">Курпаты</option>
+								<!--<option value="44">Лавровое</option>-->
+								<option value="45">Лазурное</option>
+								<option value="46">Ласпи</option>
+								<option value="47">Ленино</option>
+								<option value="48">Ливадия</option>
+								<option value="49">Малореченское</option>
+								<option value="50">Малый маяк</option>
+								<option value="51">Массандра</option>
+								<option value="52">Межводное</option>
+								<!--<option value="53">Меллас</option>
+								<option value="54">Мирный</option>-->
+								<option value="55">Мисхор</option>
+								<option value="56">Морское (Судак)</option>
+								<option value="57">Мраморные пещеры</option>
+								<!--<option value="58">Мрия резорт СКК</option>-->
+								<option value="59">Мысовое(щелкино)</option>
+								<option value="60">Научный</option>
+								<option value="61">Нижнегорское</option>
+								<option value="62">Нижняя Ореанда</option>
+								<option value="63">Никита</option>
+								<option value="64">Николаевка</option>
+								<!--<option value="65">Новоозерное</option>-->
+								<option value="66">Новоотрадное</option>
+								<!--<option value="67">Новофедоровка</option>-->
+								<option value="68">Новый свет</option>
+								<!--<option value="69">Окуневка</option>-->
+								<!--<option value="70">Оленевка</option>-->
+								<!--<option value="71">Олива</option>-->
+								<option value="72">Оползневое (Мрия Резорт))</option>
+								<option value="73">Орджоникидзе</option>
+								<option value="74">Орлиное</option>
+								<!--<option value="75">Орловка</option>-->
+								<option value="76">Отрадное</option>
+								<option value="77">Парковое</option>
+								<option value="78">Партенит</option>
+								<option value="79">Песочное (Щелкино)</option>
+								<option value="80">Песчаное</option>
+								<option value="81">Понизовка (СКК Мрия)</option>
+								<!--<option value="82">Поповка</option>-->
+								<option value="83">Прибрежное (Саки)</option>
+								<option value="84">Приветное</option>
+								<option value="85">Раздольное</option>
+								<!--<option value="86">Рыбачье</option>-->
+								<option value="87">Саки</option>
+								<option value="88">Саки (полтава)</option>
+								<option value="89">Санаторное</option>
+								<option value="90">Сатера</option>
+								<option value="91">Севастополь</option>
+								<!--<option value="92">Севастополь (Любимовка)</option>-->
+								<option value="93">Севастополь (Север)</option>
+								<option value="94">Семидворье</option>
+								<option value="95">Симеиз</option>
+								<option value="96">Симферополь</option>
+								<option value="97">Соколиное</option>
+								<option value="98">Солнечная Долина</option>
+								<option value="99">Солнечногорское</option>
+								<option value="100">Старый Крым</option>
+								<option value="101">Судак</option>
+								<option value="102">Угловое</option>
+								<option value="103">Утёс</option>
+								<option value="104">Учкуевка</option>
+								<option value="105">Феодосия</option>
+								<option value="106">Феодосия (Приморский)</option>
+								<option value="107">Форос</option>
+								<!--<option value="108">Фрунзе</option>-->
+								<option value="109">Черноморское</option>
+								<option value="110">Штормовое</option>
+								<option value="111">Щебетовка</option>
+								<option value="112">Щелкино</option>
+								<option value="113">Щелкино (Азовский)</option>
+								<option value="114">Ялта</option>
+    						</select>
+    					</div>
+    					<div id="adr_select_to" class="col">
+    						<select id="adr_sel_to">
+    							<option value="0">Откуда?</option>
+    							<option value="1">Аэропорт Симферополя</option>
+								<option value="2">Ж/д вокзал Симферополя</option>
+								<option value="3">Ай-даниль</option>
+								<option value="4">Алупка</option>
+								<option value="5">Алушта</option>
+								<!--<option value="6">Андреевка</option>-->
+								<option value="7">Армянск</option>
+								<option value="8">Балаклава</option>
+								<option value="9">Бахчисарай</option>
+								<option value="10">Белогорск</option>
+								<option value="11">Береговое (Феодосия)</option>
+								<option value="12">Береговое (бахчисарай)</option>
+								<!--<option value="13">Ботанический сад</option>-->
+								<option value="14">Вилино</option>
+								<!--<option value="15">Витино</option>-->
+								<option value="16">Гаспра</option>
+								<option value="17">Геническ</option>
+								<option value="18">Голубой Залив</option>
+								<option value="19">Гурзуф</option>
+								<option value="20">Даниловка</option>
+								<option value="21">Джанкой</option>
+								<option value="22">Евпатория</option>
+								<!--<option value="23">Заозерное</option>-->
+								<option value="24">Зеленогорье</option>
+								<!--<option value="25">Золотое (Керчь)</option>-->
+								<option value="26">Казантип (Поповка)</option>
+								<option value="27">Канака</option>
+								<option value="28">Кастрополь</option>
+								<option value="29">Кацивели</option>
+								<option value="30">Кача</option>
+								<option value="31">Керчь</option>
+								<option value="32">Керчь (героевка)</option>
+								<option value="33">Керчь(порт крым)</option>
+								<option value="34">Кикенеиз</option>
+								<option value="35">Коктебель</option>
+								<option value="36">Кореиз</option>
+								<option value="37">Красные пещеры</option>
+								<option value="38">Курортное (Белог. р-н)</option>
+								<option value="39">Курортное (Керчь)</option>
+								<option value="40">Курортное (Коктебель р-н)</option>
+								<option value="41">Курортное (Ленин. р-н)</option>
+								<option value="42">Курортное (Щебетовка)</option>
+								<option value="43">Курпаты</option>
+								<!--<option value="44">Лавровое</option>-->
+								<option value="45">Лазурное</option>
+								<option value="46">Ласпи</option>
+								<option value="47">Ленино</option>
+								<option value="48">Ливадия</option>
+								<option value="49">Малореченское</option>
+								<option value="50">Малый маяк</option>
+								<option value="51">Массандра</option>
+								<option value="52">Межводное</option>
+								<!--<option value="53">Меллас</option>
+								<option value="54">Мирный</option>-->
+								<option value="55">Мисхор</option>
+								<option value="56">Морское (Судак)</option>
+								<option value="57">Мраморные пещеры</option>
+								<!--<option value="58">Мрия резорт СКК</option>-->
+								<option value="59">Мысовое(щелкино)</option>
+								<option value="60">Научный</option>
+								<option value="61">Нижнегорское</option>
+								<option value="62">Нижняя Ореанда</option>
+								<option value="63">Никита</option>
+								<option value="64">Николаевка</option>
+								<!--<option value="65">Новоозерное</option>-->
+								<option value="66">Новоотрадное</option>
+								<!--<option value="67">Новофедоровка</option>-->
+								<option value="68">Новый свет</option>
+								<!--<option value="69">Окуневка</option>-->
+								<!--<option value="70">Оленевка</option>-->
+								<!--<option value="71">Олива</option>-->
+								<option value="72">Оползневое (Мрия Резорт))</option>
+								<option value="73">Орджоникидзе</option>
+								<option value="74">Орлиное</option>
+								<!--<option value="75">Орловка</option>-->
+								<option value="76">Отрадное</option>
+								<option value="77">Парковое</option>
+								<option value="78">Партенит</option>
+								<option value="79">Песочное (Щелкино)</option>
+								<option value="80">Песчаное</option>
+								<option value="81">Понизовка (СКК Мрия)</option>
+								<!--<option value="82">Поповка</option>-->
+								<option value="83">Прибрежное (Саки)</option>
+								<option value="84">Приветное</option>
+								<option value="85">Раздольное</option>
+								<!--<option value="86">Рыбачье</option>-->
+								<option value="87">Саки</option>
+								<option value="88">Саки (полтава)</option>
+								<option value="89">Санаторное</option>
+								<option value="90">Сатера</option>
+								<option value="91">Севастополь</option>
+								<!--<option value="92">Севастополь (Любимовка)</option>-->
+								<option value="93">Севастополь (Север)</option>
+								<option value="94">Семидворье</option>
+								<option value="95">Симеиз</option>
+								<option value="96">Симферополь</option>
+								<option value="97">Соколиное</option>
+								<option value="98">Солнечная Долина</option>
+								<option value="99">Солнечногорское</option>
+								<option value="100">Старый Крым</option>
+								<option value="101">Судак</option>
+								<option value="102">Угловое</option>
+								<option value="103">Утёс</option>
+								<option value="104">Учкуевка</option>
+								<option value="105">Феодосия</option>
+								<option value="106">Феодосия (Приморский)</option>
+								<option value="107">Форос</option>
+								<!--<option value="108">Фрунзе</option>-->
+								<option value="109">Черноморское</option>
+								<option value="110">Штормовое</option>
+								<option value="111">Щебетовка</option>
+								<option value="112">Щелкино</option>
+								<option value="113">Щелкино (Азовский)</option>
+								<option value="114">Ялта</option>
+    						</select>
+    					</div>
+    				</div>
+    				<div class="row">
+    					<div id="uName" class="col">
+    						<label for="ClintName">Ваше Имя</label><br>
+    						<input type="text"  id="ClintName" name="ClintName" placeholder="Введите имя">
+    					</div>
+    					<div id="carClass" class="col">
+    						<label for="car_sel_class">Класс авто</label><br>
+    						<select id="car_sel_class">
+    							<option value="0">Минивэн</option>
+    							<option value="1">Стандарт</option>
+								<option value="2">Комфорт</option>
+								<option value="3">Бизнес</option>
+							</select>
+    					</div>
+    				</div>
+    				<div class="row">
+    					<div id="uPhone" class="col">
+    						<label for="ClientPhone">Контактный телефон *</label><br>
+    						<input type="tel"  id="ClientPhone" name="ClientPhone" required>
+    					</div>
+    					<div id="nReis" class="col">
+    						<label for="ClientReis">Номер рейса</label><br>
+    						<input type="text"  id="ClientReis" name="ClientReis">
+    					</div>
+    				</div>
+    				<div class="row">
+    					<div id="divdate1" class="col">
+    						<label for="uDate1">Встреча</label><br>
+    						<input type="text"  id="uDate1" name="uDate1" class='datepicker-here' data-date-format="dd.mm.yyyy">
+    					</div>
+    					<div id="divdate2" class="col">
+    						<label for="uDate2">Отбытие</label><br>
+    						<input type="text"  id="uDate2" name="uDate2" class='datepicker-here' data-date-format="dd.mm.yyyy">
+    					</div>
+    				</div>
+    				<div class="row">
+    					<div id="divPay" class="col">
+    						<label for="selPay">Выберите способ оплаты</label><br>
+    						<select id="selPay" name="selPay">
+    							<option value="0">Не выбрано</option>
+    							<option value="1">Наличными</option>
+    							<option value="2">QIWY Кошелек</option>
+    							<option value="3">По номеру карты</option>
+    						</select>
+    					</div>
+    					<div id="obrTr" class="col">
+    						<br>
+    						<label for="Obr">Обратный трансфер</label>
+    						<input type="checkbox"  id="Obr" name="Obr">
+    					</div>
+    				</div>
+    				<div class="row">
+    					<label for="uDesc">Комментарий к заказу</label><br>
+    					<textarea id="uDesc" name="uDesc" width="100%"></textarea><br>
+    				</div>
+    				<input type="button" value="Заказать такси" id="ZakazTaxi">
+    			</form>
+    		</div>
+    	</div>
+    	<script src="./scripts/js/jquery-3.3.1.js" type="text/javascript"></script>
+    	<script src="./scripts/js/bootstrap.js?v=1" type="text/javascript"></script>
+    	<script type="text/javascript" src="./scripts/js/datepicker.js"></script>
+    	<!--<script src="http://maps.google.com/maps/api/js?sensor=false&libraries=geometry" type="text/javascript"></script>-->
+    	<script src="./scripts/js/dt.js?v=1" type="text/javascript"></script>
+        <script src="./scripts/js/calc.js?v=1" type="text/javascript"></script>
+        <!--Форма с Яндекс картой для расчета расстояния между двумя точками-->
+        <!--<script src="https://nevatec.spb.ru/js/embed.js" type="text/javascript"></script>-->
+    </body>
+</html>
